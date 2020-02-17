@@ -55,12 +55,16 @@ $check= DB::table('story')->count();
 
         <a href="#" class="btn btn-warning mb-3 pr-5 pl-5"><span class="fas fa-book-reader"> </span>  อ่าน</a>
         <a href="#" class="btn btn-warning mb-3 pr-5 pl-5 ml-2"><span class="fas fa-plus"></span> เพิ่มลงชั้นหนังสือ </a>
+      
+
+
     </div>
     <!-- Grid column -->
-    <div class="text-center ml-5">
+    <div class="text-center ">
     <small class="mb-3 ml-5 text-warning"> <span class="far fa-eye"></span> {!! $chapterViews2 !!}</small>
-    <small class="mb-3 ml-5 text-success"> <span class="far fa-clock"></span> อัพเดทล่าสุด {!! fbtime($storys->storyUpdate); !!}</small>
-    </div>
+    <small class="mb-3 ml-3 text-success"> <span class="far fa-clock"></span> อัพเดทล่าสุด {!! fbtime($storys->storyUpdate); !!}</small>
+   <small class="mb-3 ml-3 "> <a href="#" class="text-danger"><span class="fas fa-star"></span> กดดาว </a></small>
+  </div>
 </div>
   <!-- Grid row -->
 
