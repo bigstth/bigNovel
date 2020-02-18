@@ -36,10 +36,13 @@
     <div class="container"> 
         <a class="navbar-brand mb-0 h1 " href="{{ url('/')}}">bigNovel</a>
         <div class="navbar-toggler">
-        <button class="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#menudrop" aria-controls="menudrop" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler mr-2" data-toggle="collapse" data-target="#menudrop" aria-controls="menudrop" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <button class="btn btn-warning" type="submit">เข้าสู่ระบบ</button>
+        <button class="btn btn-warning" data-toggle="modal" data-target="#login">เข้าสู่ระบบ</button>
+       
+        
+        
     </div>
         <div class="collapse navbar-collapse " id="menudrop">
           <ul class="navbar-nav mr-auto">
@@ -58,14 +61,44 @@
                     <a class="nav-link" href="{{ url('/writer')}}"><span class="fas fa-feather-alt pr-1"></span> เขียนนิยาย</a>
             </li>
           </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <div class="col d-none d-lg-block  d-md-none d-xl-block">
-                <button class="btn btn-warning" type="submit">เข้าสู่ระบบ</button>
+            <div class="col d-none d-lg-block  d-md-none d-xl-block text-right">
+              <a href="{{ url('/register')}}" class="btn btn-warning">สมัครสมาชิก</a>
+                <button class="btn btn-success" data-toggle="modal" data-target="#login">เข้าสู่ระบบ</button>
               </div>
-          </form>
         </div>
     </div>
       </nav>
+      {{-- modal of login --}}
+      <div class="modal fade" id="login" tabindex="1" role="dialog" aria-labelledby="เข้าสู่ระบบ" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">เข้าสู่ระบบ</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true"><button type="button" class="btn btn-danger" data-dismiss="modal">X</button>
+                </span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="username">ชื่อผู้ใช้งาน</label>
+                  <input type="email" class="form-control" id="username" aria-describedby="username">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">รหัสผ่าน</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-warning">สมัครสมาชิก</button>
+              <button type="submit" class="btn btn-success">เข้าสู่ระบบ</button>
+            </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{-- end of modal of login --}}
       @yield('slide')
 {{--content--}}
     @yield('content')

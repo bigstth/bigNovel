@@ -19,3 +19,4 @@ Route::get('bookshelf','HomeController@bookshelf')->name('bookshelf');
 Route::get('writer','HomeController@writer')->name('writer');
 Route::get('search','HomeController@search')->name('search');
 Route::get('contact','HomeController@contact')->name('contact');
+Route::get('register','HomeController@register')->name('register');

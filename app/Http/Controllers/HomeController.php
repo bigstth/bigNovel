@@ -39,4 +39,8 @@ class HomeController extends Controller
     {
         return view('search');
     }
+    public function register()
+    {
+        return view('register');
+    }
 }
